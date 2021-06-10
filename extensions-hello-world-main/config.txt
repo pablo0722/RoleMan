@@ -1,0 +1,1 @@
+SET EXT_CHANNEL=rada0722 & SET EXT_CLIENT_ID=aw2itjsfe8n332a61cfq91ub7cc96f & SET EXT_SECRET=r8srgrnyo0byn6a5h2t0n764m9jzvp & SET EXT_OWNER_NAME=rada0722 & SET EXT_OWNER_ID=aw2itjsfe8n332a61cfq91ub7cc96f & SET EXT_VERSION=0.0.1 & yarn start
