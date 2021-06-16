@@ -1,7 +1,8 @@
+## FRUTSI DATO
+
 COMMAND_NAME: FrutsiDato
 PUBLIC_KEY: a78f0f19
 PRIVATE_KEY: 8202d96093bedc36
-
 
 !commands remove !AllFrutsiDato
 !commands remove !rmFrutsiDato
@@ -21,3 +22,10 @@ PRIVATE_KEY: 8202d96093bedc36
 !AddFrutsiDato Debo dejar de hacer referencias a los ciclos de sueño de animales sin saber cómo duermen XD
 
 !rmFrutsiDato 1
+
+
+
+## BAN
+
+!commands add !ban -a=_!ban $(touser) banead@ $(eval a='$(user)';b='$(touser)';c='$(query)'.split(" ");c.shift();if('$(2)'=='null'){const responses = ['! pa tu casa', '! ya no hay pedo', '! alv'];responses[Math.floor(Math.random() * responses.length)]}else{c.join(" ")})
+!commands add _!ban $(eval if('$(query)'.split('|')[1]!='$e$'){'$(query)'}else{' '})
