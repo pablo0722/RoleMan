@@ -8,6 +8,7 @@ PRIVATE_KEY: 8202d96093bedc36
 !commands remove !rmFrutsiDato
 !commands remove !FrutsiDato
 !commands remove _!FrutsiDato
+!commands remove !AddFrutsiDato
 
 !commands add !AllFrutsiDato $(urlfetch https://twitch.center/customapi/quote/list?token=a78f0f19)
 !commands add !rmFrutsiDato $(urlfetch https://twitch.center/customapi/delquote?token=8202d96093bedc36&data=$(querystring))
@@ -23,6 +24,32 @@ PRIVATE_KEY: 8202d96093bedc36
 
 !rmFrutsiDato 1
 
+
+## YOJAI CHISTES
+
+COMMAND_NAME: !Yojaja
+PUBLIC_KEY: 5f8c69d1
+PRIVATE_KEY: bfb26e8d611130ff
+
+!commands remove !AllYojaja
+!commands remove !rmYojaja
+!commands remove !Yojajas
+!commands remove !Yojaja
+!commands remove _!Yojaja
+!commands remove !AddYojaja
+!commands remove !AddYojajas
+
+!commands add !AllYojaja $(urlfetch https://twitch.center/customapi/quote/list?token=5f8c69d1)
+!commands add !rmYojaja $(urlfetch https://twitch.center/customapi/delquote?token=bfb26e8d611130ff&data=$(querystring))
+!commands add !Yojajas -a=_!Yojaja $(urlfetch https://twitch.center/customapi/quote?token=5f8c69d1&data=$(querystring))
+!commands add !Yojaja -a=_!Yojaja $(urlfetch https://twitch.center/customapi/quote?token=5f8c69d1&data=$(querystring))
+!commands add _!Yojaja Cita N°$(eval b='$(query)';c=b.split('|')[1];b.split('.')[0]+`: `+c+` ~ El Yojai `+b.split('|')[2])
+!commands add !AddYojaja $(urlfetch https://twitch.center/customapi/addquote?token=bfb26e8d611130ff&data=|"$(querystring) "|$(time America/Mexico_City "YYYY"))
+!commands add !AddYojajas $(urlfetch https://twitch.center/customapi/addquote?token=bfb26e8d611130ff&data=|"$(querystring) "|$(time America/Mexico_City "YYYY"))
+
+!AddYojaja Me gusta meter la mano por detrás y hablarle por la nuca
+
+!rmYojaja 1
 
 
 ## BAN
