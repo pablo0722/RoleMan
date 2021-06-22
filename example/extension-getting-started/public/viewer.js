@@ -129,7 +129,7 @@ twitch.onAuthorized (function (auth) {
                 
                 $('.state-button').click(function () {
                     log (`set state-button: ${$(this).val ()}`);
-                    set_state (user ['login'], $(this).val ());
+                    add_state (user ['login'], $(this).val ());
                 });
 
                 $('#offline-btn').click(function () {
@@ -205,6 +205,14 @@ function rm_state (state, callback) {
 
 function set_state (mod, state, callback) {
     getData (`https://storage.rada0722.repl.co/edit?filename=ModList.json&${mod}=${state}`)
+    .then (data => {
+        log (`state setted: ${data}`);
+        callback (data);
+    });
+}
+
+function add_state (mod, state, callback) {
+    getData (`https://storage.rada0722.repl.co/editAdd?filename=ModList.json&${mod}=${state}`)
     .then (data => {
         log (`state setted: ${data}`);
         callback (data);
