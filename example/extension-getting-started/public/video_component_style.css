@@ -1,0 +1,24 @@
+:root {
+    --text-size: 12em
+}
+body {
+    background-color: black;
+}
+h2 {
+    text-align: center;
+    color: #9100ff;
+    margin: 0 0 0.5em 0;
+    font-size: var(--text-size);
+}
+p {
+    font-size: var(--text-size);
+    font-weight: bold;
+}
+input {
+    padding: 0.1em 0.1em 0.1em 0.1em;
+    font-size: var(--text-size);
+    border-radius: var(--text-size);
+    margin: 0.5em 0 0 0;
+    font-weight: bold;
+    display: block;
+}

@@ -1,0 +1,36 @@
+h2 {
+    text-align: center;
+    color: #9100ff;
+    margin: 0 0 0.5em 0;
+    font-size:1em;
+}
+p {
+    font-size:1em;
+    font-weight: bold;
+}
+input {
+    padding: 0.4em 0.4em 0.4em 0.4em;
+    font-size:1em;
+    border-radius: 1em;
+    margin: 0.5em 0 0 0;
+    font-weight: bold;
+    display: block;
+}
+#name_red {
+    color: red;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+#state_red {
+    color: red;
+    font-size: 1.2em;
+}
+#name_green {
+    color: green;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+#state_green {
+    color: green;
+    font-size: 1.2em;
+}

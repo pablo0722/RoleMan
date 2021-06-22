@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html id="all">
+<head>
+    <link rel="stylesheet" href="mobile_style.css">
+    <title>Viewer Page</title>
+</head>
+<body style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+    <div id="app" class="full-height"></div>
+    <script src="https://extension-files.twitch.tv/helper/v1/twitch-ext.min.js"></script>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="viewer.js" type="text/javascript"></script>
+    <h2>Moderadores</h2>
+    <div id="logs" style="display: none">
+    </div>
+    <div id="mods">
+        <div id="mods-online">
+        </div>
+        <div id="mods-offline" style="display: none">
+        </div>
+    </div>
+    <div id="buttons" style="display: none">
+    </div>
+    <div id="extra-buttons" style="display: none">
+        <input type="button" id="get-states-btn"    value="obtener estados"         style="color:red;"/>
+        <input type="text"   id="extra-txt"         name="add-state-btn"            style="color:red;"/>
+        <input type="button" id="add-state-btn"     value="agregar estado"          style="color:red;"/>
+        <input type="button" id="rm-state-btn"      value="eliminar estado"         style="color:red;"/>
+        <input type="button" id="offline-state-btn" value="setear estado a offline" style="color:red;"/>
+        <input type="button" id="add-mod-btn"       value="agregar mod"             style="color:red;"/>
+        <input type="button" id="rm-mod-btn"        value="eliminar estado"         style="color:red;"/>
+    </div>
+    <div id="debug-buttons" style="display: none;">
+        <input type="button" id="log-btn" value="mostrar logs"/>
+    </div>
+    <div id="list">
+    </div>
+</body>
+</html>
