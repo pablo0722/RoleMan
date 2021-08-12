@@ -56,3 +56,7 @@ PRIVATE_KEY: bfb26e8d611130ff
 
 !commands add !ban -a=_!ban $(touser) banead@ $(eval a='$(user)';b='$(touser)';c='$(query)'.split(" ");c.shift();if('$(2)'=='null'){const responses = ['! pa tu casa', '! ya no hay pedo', '! alv'];responses[Math.floor(Math.random() * responses.length)]}else{c.join(" ")})
 !commands add _!ban $(eval if('$(query)'.split('|')[1]!='$e$'){'$(query)'}else{' '})
+
+!commands add !shutup $(touser), $(eval const responses = ['ya callate alv', 'No hables a menos que puedas mejorar el silencio', 'Procura que tus palabras sean tan bellas como tus silencios', 'Es mejor guardar silencio y ser tomado por tonto que abrir la boca y despejar las dudas', 'Cerrá el ort* lrpmqtrmp']; responses[Math.floor(Math.random() * responses.length)])
+
+!commands add !host ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ Me ayudan un montón yendo a su canal de twitch y poniendo "/host Yojaai" en la web o en el celular ir a "Compartir" "Dar Host a Yojaai", así tengo mas posibilidades de aparecer en recomendados y poder crecer. Muchas gracias!!! ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
