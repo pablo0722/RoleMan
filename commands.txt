@@ -11,7 +11,7 @@ PRIVATE_KEY: 8202d96093bedc36
 !commands remove !AddFrutsiDato
 
 !commands add !AllFrutsiDato $(urlfetch https://twitch.center/customapi/quote/list?token=a78f0f19)
-!commands add !rmFrutsiDato $(urlfetch https://twitch.center/customapi/delquote?token=8202d96093bedc36&data=$(querystring))
+!commands add !rmFrutsiDato -ul=moderator $(urlfetch https://twitch.center/customapi/delquote?token=8202d96093bedc36&data=$(querystring))
 !commands add !FrutsiDato -a=_!FrutsiDato $(urlfetch https://twitch.center/customapi/quote?token=a78f0f19&data=$(querystring))
 !commands add _!FrutsiDato Cita N°$(eval b='$(query)';c=b.split('|')[1];b.split('.')[0]+`: `+c+` ~La Frutsi `+b.split('|')[2])
 !commands add !AddFrutsiDato $(urlfetch https://twitch.center/customapi/addquote?token=8202d96093bedc36&data=|"$(querystring) "|$(time America/Mexico_City "YYYY"))
@@ -40,7 +40,7 @@ PRIVATE_KEY: bfb26e8d611130ff
 !commands remove !AddYojajas
 
 !commands add !AllYojaja $(urlfetch https://twitch.center/customapi/quote/list?token=5f8c69d1)
-!commands add !rmYojaja $(urlfetch https://twitch.center/customapi/delquote?token=bfb26e8d611130ff&data=$(querystring))
+!commands add !rmYojaja -ul=moderator $(urlfetch https://twitch.center/customapi/delquote?token=bfb26e8d611130ff&data=$(querystring))
 !commands add !Yojajas -a=_!Yojaja $(urlfetch https://twitch.center/customapi/quote?token=5f8c69d1&data=$(querystring))
 !commands add !Yojaja -a=_!Yojaja $(urlfetch https://twitch.center/customapi/quote?token=5f8c69d1&data=$(querystring))
 !commands add _!Yojaja Cita N°$(eval b='$(query)';c=b.split('|')[1];b.split('.')[0]+`: `+c+` ~ El Yojai `+b.split('|')[2])
@@ -52,6 +52,31 @@ PRIVATE_KEY: bfb26e8d611130ff
 !rmYojaja 1
 
 
+# Galletas Principe
+
+COMMAND_NAME: !Principe
+PUBLIC_KEY: c997ec07
+PRIVATE_KEY: ce70b32d2b44cfc5
+
+!commands remove !AllComercial
+!commands remove !rmComercial
+!commands remove !Comercial
+!commands remove _!Comercial
+!commands remove !AddComercial
+
+!commands add !AllComercial $(urlfetch https://twitch.center/customapi/quote/list?token=c997ec07)
+!commands add !rmComercial -ul=moderator $(urlfetch https://twitch.center/customapi/delquote?token=ce70b32d2b44cfc5&data=$(querystring))
+!commands add !Comercial -a=_!Comercial $(urlfetch https://twitch.center/customapi/quote?token=c997ec07&data=$(querystring))
+!commands add _!Comercial Comercial N°$(eval b='$(query)';c=b.split('|')[1];b.split('.')[0]+`: `+c)
+!commands add !AddComercial $(urlfetch https://twitch.center/customapi/addquote?token=ce70b32d2b44cfc5&data=|"$(querystring) "|)
+
+!AddComercial Me encantan las #GalletasPrincipe, porque yo se que hay un principe dentro de mi.
+!AddComercial #GalletasPrincipe, no son toxicas como tu ex-novia
+!AddComercial Gracias por visitar el canal de Robigot pero no olvides disfrutar de unas ricas #GalletasPrincipe
+!AddComercial No olvides que puedes disfrutar de unas ricas #GalletasPrincipe mientras escuchas buenas canciones
+!AddComercial Las #GalletasPrincipe, sólo para príncipes de verdad
+!AddComercial Come #GalletasPrincipe para ser como Robi
+
 ## BAN
 
 !commands add !ban -a=_!ban $(touser) banead@ $(eval a='$(user)';b='$(touser)';c='$(query)'.split(" ");c.shift();if('$(2)'=='null'){const responses = ['! pa tu casa', '! ya no hay pedo', '! alv'];responses[Math.floor(Math.random() * responses.length)]}else{c.join(" ")})
@@ -60,3 +85,5 @@ PRIVATE_KEY: bfb26e8d611130ff
 !commands add !shutup $(touser), $(eval const responses = ['ya callate alv', 'No hables a menos que puedas mejorar el silencio', 'Procura que tus palabras sean tan bellas como tus silencios', 'Es mejor guardar silencio y ser tomado por tonto que abrir la boca y despejar las dudas', 'Cerrá el ort* lrpmqtrmp']; responses[Math.floor(Math.random() * responses.length)])
 
 !commands add !host ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ Me ayudan un montón yendo a su canal de twitch y poniendo "/host Yojaai" en la web o en el celular ir a "Compartir" "Dar Host a Yojaai", así tengo mas posibilidades de aparecer en recomendados y poder crecer. Muchas gracias!!! ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+!commands add !so -ul=moderator ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ Visita a $(touser) y dale un buen follow en $(twitch $(touser) "{{url}}"), estaban en la categoria de $(twitch $(touser) "{{game}}")! ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
