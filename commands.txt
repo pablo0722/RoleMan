@@ -1,3 +1,26 @@
+## ROBI CHISTE
+
+COMMAND_NAME: RobiChiste
+PUBLIC_KEY: 71222e25
+PRIVATE_KEY: 5c9dc0dd203d9786
+
+!commands remove !AllRobiChiste
+!commands remove !rmRobiChiste
+!commands remove !RobiChiste
+!commands remove _!RobiChiste
+!commands remove !AddRobiChiste
+
+!commands add !AllRobiChiste $(urlfetch https://twitch.center/customapi/quote/list?token=71222e25)
+!commands add !rmRobiChiste -ul=moderator $(urlfetch https://twitch.center/customapi/delquote?token=5c9dc0dd203d9786&data=$(querystring))
+!commands add !RobiChiste -a=_!RobiChiste $(urlfetch https://twitch.center/customapi/quote?token=71222e25&data=$(querystring))
+!commands add _!RobiChiste Cita N°$(eval b='$(query)';c=b.split('|')[1];b.split('.')[0]+`: `+c+` ~El Robi `+b.split('|')[2])
+!commands add !AddRobiChiste $(urlfetch https://twitch.center/customapi/addquote?token=5c9dc0dd203d9786&data=|"$(querystring) "|$(time America/Mexico_City "YYYY"))
+
+!rmRobiChiste 1
+
+
+
+
 ## FRUTSI DATO
 
 COMMAND_NAME: FrutsiDato
@@ -23,6 +46,9 @@ PRIVATE_KEY: 8202d96093bedc36
 !AddFrutsiDato Debo dejar de hacer referencias a los ciclos de sueño de animales sin saber cómo duermen XD
 
 !rmFrutsiDato 1
+
+
+
 
 
 ## YOJAI CHISTES
@@ -52,6 +78,9 @@ PRIVATE_KEY: bfb26e8d611130ff
 !rmYojaja 1
 
 
+
+
+
 # Galletas Principe
 
 COMMAND_NAME: !Principe
@@ -76,6 +105,72 @@ PRIVATE_KEY: ce70b32d2b44cfc5
 !AddComercial No olvides que puedes disfrutar de unas ricas #GalletasPrincipe mientras escuchas buenas canciones
 !AddComercial Las #GalletasPrincipe, sólo para príncipes de verdad
 !AddComercial Come #GalletasPrincipe para ser como Robi
+
+
+
+
+
+# Shut Up
+
+COMMAND_NAME: !shutup
+PUBLIC_KEY: 6e6f56db
+PRIVATE_KEY: c4bc5cddc4dd210c
+
+!commands remove !Allshutup
+!commands remove !rmshutup
+!commands remove !shutup
+!commands remove _!shutup
+!commands remove !Addshutup
+
+!commands add !Allshutup $(urlfetch https://twitch.center/customapi/quote/list?token=6e6f56db)
+!commands add !rmshutup -ul=moderator $(urlfetch https://twitch.center/customapi/delquote?token=c4bc5cddc4dd210c&data=$(querystring))
+!commands add !shutup -a=_!shutup $(urlfetch https://twitch.center/customapi/quote?token=6e6f56db&data=$(querystring))
+!commands add _!shutup $(touser), $(eval b='$(query)';c=b.split('|')[1];c)
+!commands add !Addshutup $(urlfetch https://twitch.center/customapi/addquote?token=c4bc5cddc4dd210c&data=|"$(querystring) "|)
+
+!Addshutup ya callate alv
+!Addshutup No hables a menos que puedas mejorar el silencio
+!Addshutup Procura que tus palabras sean tan bellas como tus silencios
+!Addshutup Es mejor guardar silencio y ser tomado por tonto que abrir la boca y despejar las dudas
+!Addshutup Cerrá el ort* lrpmqtrmp
+## ROBI CHISTE
+
+
+
+
+
+COMMAND_NAME: Slap
+PUBLIC_KEY: 449cc489
+PRIVATE_KEY: fb3b717ac08cd35d
+
+!commands remove !AllSlap
+!commands remove !rmSlap
+!commands remove !Slap
+!commands remove _!Slap
+!commands remove !AddSlap
+
+!commands add !AllSlap $(urlfetch https://twitch.center/customapi/quote/list?token=449cc489)
+!commands add !rmSlap -ul=moderator $(urlfetch https://twitch.center/customapi/delquote?token=fb3b717ac08cd35d&data=$(querystring))
+!commands add !Slap -a=_!Slap $(urlfetch https://twitch.center/customapi/quote?token=449cc489&data=$(eval a='$(query)';b=a.split(' ');c=' ';for(i=1;i<b.length;i++){c=c+b[i]+' '};c))|$(touser)
+!commands add _!Slap $(eval b='$(query)';c=b.split('|')[1];d=b.split('|')[2];`$(user) le slapea `+c+` a `+d)
+!commands add !AddSlap $(urlfetch https://twitch.center/customapi/addquote?token=fb3b717ac08cd35d&data=|$(querystring))
+
+!slap @StreamElements occi
+
+!rmSlap 1
+
+
+
+
+
+
+!commands remove !test
+!commands add !test querystring=$(querystring)|arg=$(eval a='$(query)';b=a.split(' ');c=' ';for(i=1;i<b.length;i++){c=c+b[i]+' '};c)|query=$(query)|touser=$(touser)|user=$(user)
+!test @StreamElements lala lolo
+
+
+
+
 
 ## BAN
 
