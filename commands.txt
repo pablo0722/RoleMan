@@ -81,6 +81,55 @@ PRIVATE_KEY: bfb26e8d611130ff
 
 
 
+## YOJAI Mentiras
+
+COMMAND_NAME: !YoFake
+PUBLIC_KEY: aa67e752
+PRIVATE_KEY: 54ce96afe1d2bf12
+
+!commands remove !AllYoFake
+!commands remove !rmYoFake
+!commands remove !YoFakes
+!commands remove !YoFake
+!commands remove _!YoFake
+!commands remove !AddYoFake
+!commands remove !AddYoFakeNote
+
+!commands add !AllYoFake $(urlfetch https://twitch.center/customapi/quote/list?token=aa67e752)
+!commands add !rmYoFake -ul=moderator $(urlfetch https://twitch.center/customapi/delquote?token=54ce96afe1d2bf12&data=$(querystring))
+!commands add !YoFakes -a=_!YoFake $(urlfetch https://twitch.center/customapi/quote?token=aa67e752&data=$(querystring))
+!commands add !YoFake -a=_!YoFake $(urlfetch https://twitch.center/customapi/quote?token=aa67e752&data=$(querystring))
+!commands add _!YoFake Mentira N°$(eval b='$(query)';c=b.split('|')[1];b.split('.')[0]+`: `+c+` ~ El Yojai `+b.split('|')[2])
+!commands add !AddYoFake $(urlfetch https://twitch.center/customapi/addquote?token=54ce96afe1d2bf12&data=|"$(querystring) "|$(time America/Mexico_City "YYYY"))
+!commands add !AddYoFakeNote $(urlfetch https://twitch.center/customapi/addquote?token=54ce96afe1d2bf12&data=|$(querystring)|$(time America/Mexico_City "YYYY"))
+
+!AddYoFake No dejé en visto a Frutsi y Brenda
+!AddYoFake No le debo una canción a Kimu
+!AddYoFake Meli no me mandó la nutria sin fondo
+!AddYoFake Todo lo que digo es verdad
+!AddYoFake Le dije a jeff que era un stream de striptease
+!AddYoFake Las cosas no fueron así y hay pruebas.
+!AddYoFake Hoy si comí
+!AddYoFake Ahorita puedo ir por el piano y hacer el stream de música
+!AddYoFakeNote "A mis amigos les mando comida" (a rol nunca le ha mandado nada)
+!AddYoFake Voy a visitar a Pau
+!AddYoFake Rol es su amigo
+
+!AddYoFakeNote "No dije que me comía las papas así" (con la cuchara)
+!AddYoFake Hoy hablé con Brenda por que me envió un meme
+!AddYoFakeNote "Voy a hacer stream" (y se fué con su abuelita)
+!AddYoFakeNote (no hace stream) "Lo voy a reponer"
+!AddYoFakeNote "Papita puede comer a gusto" (y continuó hablando de marranadas en los demás streams)
+!AddYoFake Voy a comprarle la cámara a Robis
+!AddYoFake Voy a jugar overcooked con Brenda
+!AddYoFake No le debo taquitos a nadie
+
+!rmYoFake 1
+
+
+
+
+
 # Galletas Principe
 
 COMMAND_NAME: !Principe
