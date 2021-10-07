@@ -20,7 +20,7 @@
             "type": "enum",
             "options": [
                 {
-                    "label": "-",
+                    "label": "---",
                     "value": "",
                     "description": "no subtype"
                 },
@@ -30,7 +30,7 @@
                     "description": "introduces a breaking API change"
                 },
                 {
-                    "label": "PARTIAL COMMIT:",
+                    "label": "PARTIAL COMMIT",
                     "value": ":construction:",
                     "description": "introduces a non-functional commit"
                 }
@@ -40,56 +40,84 @@
             "label": "Type",
             "name": "type",
             "type": "enum",
+            "description": "Type of changes",
             "options": [
                 {
-                    "label": "---",
-                    "value": ""
+                    "label": "initial",
+                    "value": ":tada: initial",
+                    "description": "Begin a project"
                 },
                 {
                     "label": "build",
+                    "value": ":hammer: build",
                     "description": "Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)"
                 },
                 {
                     "label": "chore",
-                    "description": "Updating grunt tasks etc; no production code change"
+                    "value": ":watch: chore",
+                    "description": "Other changes that don't modify src or test files"
                 },
                 {
                     "label": "ci",
+                    "value": ":robot: ci",
                     "description": "Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)"
                 },
                 {
                     "label": "docs",
+                    "value": ":books: docs",
                     "description": "Documentation only changes"
                 },
                 {
                     "label": "feat",
+                    "value": ":sparkles: feat",
                     "description": "A new feature"
                 },
                 {
                     "label": "fix",
+                    "value": ":bug: fix",
                     "description": "A bug fix"
                 },
                 {
                     "label": "perf",
+                    "value": ":rocket: perf",
                     "description": "A code change that improves performance"
                 },
                 {
                     "label": "refactor",
-                    "description": "A code change that neither fixes a bug nor adds a feature"
+                    "value": ":paperclip: refactor",
+                    "description": "A code change that neither adds a feature nor fixes a bug"
                 },
                 {
-                    "label": "revert"
+                    "label": "revert",
+                    "value": ":wastebasket: revert",
+                    "description": "reverts a previous commit. Commit subject must be the subject of the reverted commit. In the body it should say: \"this reverts commit <hash>\", where the hash is the SHA of the commit being reverted"
                 },
                 {
                     "label": "style",
-                    "description": "Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)"
+                    "value": ":gem: style",
+                    "description": "Improve structure / format of the code.\nChanges that do not affect the meaning of the code"
                 },
                 {
                     "label": "test",
+                    "value": ":test_tube: test",
                     "description": "Adding missing tests or correcting existing tests"
+                },
+                {
+                    "label": "clean",
+                    "value": ":broom: clean",
+                    "description": "Removes code or files, move file between directories, create new directories"
+                },
+                {
+                    "label": "hotfix",
+                    "value": ":ambulance: hotfix",
+                    "description": "Small critical fix e.g. a semi-colon which without it program does not work"
+                },
+                {
+                    "label": "merge",
+                    "value": ":twisted_rightwards_arrows: merge",
+                    "description": "Branch merge, In the subject it must say:   branch 'A into 'B'"
                 }
-            ],
-            "description": "Type of changes"
+            ]
         },
         {
             "label": "Scope",
@@ -98,17 +126,18 @@
             "description": "A scope may be provided to a commit’s type, to provide additional contextual information and is contained within parenthesis, e.g., \"feat(parser): add ability to parse arrays\".",
             "prefix": "(",
             "suffix": ")",
-            "combobox": true,
+            "multiple": true,
+            "separator": ", ",
             "options": [
+                {
+                    "label": "UI",
+                    "value": "UI",
+                    "description": "Changes on the UI and style files i.e. xml and other resource files"
+                },
                 {
                     "label": "commands",
                     "value": "commands",
-                    "description": "twitch commands"
-                },
-                {
-                    "label": "roleman",
-                    "value": "roleman",
-                    "description": "Role Manager twitch extension"
+                    "description": "Changes on the twitch commands"
                 }
             ]
         },
@@ -131,9 +160,23 @@
         {
             "label": "Footer",
             "name": "footer",
+            "type": "enum",
             "description": "Optional footer",
-            "type": "text",
-            "multiline": true
+            "multiline": true,
+            "multiple": true,
+            "separator": "\n",
+            "options": [
+                {
+                    "label": "BREAKING CHANGE: ",
+                    "value": "BREAKING CHANGE: ",
+                    "description": "Detail a breaking API change"
+                },
+                {
+                    "label": "doc: ",
+                    "value": "doc: ",
+                    "description": "Reference to a documentation"
+                }
+            ]
         }
     ]
 }
