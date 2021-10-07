@@ -167,14 +167,14 @@
             "separator": "\n",
             "options": [
                 {
-                    "label": "BREAKING CHANGE: ",
-                    "value": "BREAKING CHANGE: ",
-                    "description": "Detail a breaking API change"
-                },
-                {
                     "label": "doc: ",
                     "value": "doc: ",
                     "description": "Reference to a documentation"
+                },
+                {
+                    "label": "BREAKING CHANGE: ",
+                    "value": "BREAKING CHANGE: ",
+                    "description": "Detail a breaking API change"
                 }
             ]
         }
