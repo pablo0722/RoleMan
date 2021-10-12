@@ -11,7 +11,7 @@
                 "",
                 "{footer}"
               ],
-            "schema_pattern": "(:tada: initial|:hammer: build|:watch: chore|:robot: ci|:books: docs|:sparkles: feat|:bug: fix|:rocket: perf|:paperclip: refactor|:wastebasket: revert|:gem: style|:test_tube: test|:broom: clean|:ambulance: hotfix|:twisted_rightwards_arrows: merge):(\\s.*)",
+            "schema_pattern": "(:rotating_light:|:construction:)?(:tada: initial|:hammer: build|:watch: chore|:robot: ci|:books: docs|:sparkles: feat|:bug: fix|:rocket: perf|:paperclip: refactor|:wastebasket: revert|:gem: style|:test_tube: test|:broom: clean|:ambulance: hotfix|:twisted_rightwards_arrows: merge)(\\(.+\\)):(\\s.+)(\\n(\\n.+)+)?(\\n(\\n.+)+)?",
             "bump_pattern": "^(break|new|fix|hotfix)",
             "bump_map": {
                 "break": "MAJOR",
@@ -119,11 +119,11 @@
                             "name": "no scope: ---"
                         },
                         {
-                            "value": "commands",
+                            "value": "(commands)",
                             "name": "commands: twitch commands"
                         },
                         {
-                            "value": "roleman",
+                            "value": "(roleman)",
                             "name": "roleman: Role Manager twitch extension"
                         }   
                     ]
