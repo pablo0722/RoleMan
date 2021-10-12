@@ -1,0 +1,168 @@
+{
+    "commitizen": {
+	"name": "cz_customize",
+    "version": "0.1.0",
+        "customize": {
+            "message_template": "{{subtype}}{{type}}{{scope}}: {{message}}\n\n{{body}}\n\n{{footer}}",
+            "example": "feature: this feature enable customize through config file",
+            "schema": ["{subtype}{type}{scope}: {message}",
+                "",
+                "{body}",
+                "",
+                "{footer}"
+              ],
+            "schema_pattern": "(:tada: initial|:hammer: build|:watch: chore|:robot: ci|:books: docs|:sparkles: feat|:bug: fix|:rocket: perf|:paperclip: refactor|:wastebasket: revert|:gem: style|:test_tube: test|:broom: clean|:ambulance: hotfix|:twisted_rightwards_arrows: merge):(\\s.*)",
+            "bump_pattern": "^(break|new|fix|hotfix)",
+            "bump_map": {
+                "break": "MAJOR",
+                "new": "MINOR",
+                "fix": "PATCH",
+                "hotfix": "PATCH"
+            },
+            "change_type_order": ["BREAKING CHANGE", "feat", "fix", "refactor", "perf"],
+	        "info_path": "cz_customize_info.txt",
+            "info": "This is customized info",
+            "questions": [
+                {
+                    "name": "type",
+                    "message": "Select the type of change you are committing",
+                    "type": "list",
+                    "choices": [
+                        {
+                            "value": ":tada: initial",
+                            "name": "initial: Begin a project"
+                        },
+                        {
+                            "value": ":hammer: build",
+                            "name": "build: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)"
+                        },
+                        {
+                            "value": ":watch: chore",
+                            "name": "chore: Updating grunt tasks etc; no production code change"
+                        },
+                        {
+                            "value": ":robot: ci",
+                            "name": "ci: Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)"
+                        },
+                        {
+                            "value": ":books: docs",
+                            "name": "docs: Documentation only changes"
+                        },
+                        {
+                            "value": ":sparkles: feat",
+                            "name": "feat: A new feature"
+                        },
+                        {
+                            "value": ":bug: fix",
+                            "name": "fix: A bug fix"
+                        },
+                        {
+                            "value": ":rocket: perf",
+                            "name": "perf: A code change that improves performance"
+                        },
+                        {
+                            "value": ":paperclip: refactor",
+                            "name": "refactor: A code change that neither fixes a bug nor adds a feature"
+                        },
+                        {
+                            "value": ":wastebasket: revert",
+                            "name": "revert: reverts a previous commit. Commit subject must be the subject of the reverted commit. In the body it should say: \"this reverts commit <hash>\", where the hash is the SHA of the commit being reverted"
+                        },
+                        {
+                            "value": ":gem: style",
+                            "name": "style: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)"
+                        },
+                        {
+                            "value": ":test_tube: test",
+                            "name": "test: Adding missing tests or correcting existing tests"
+                        },
+                        {
+                            "value": ":broom: clean",
+                            "name": "clean: Removes code or files, move file between directories, create new directories"
+                        },
+                        {
+                            "value": ":ambulance: hotfix",
+                            "name": "hotfix: Small critical fix e.g. a semi-colon which without it program does not work"
+                        },
+                        {
+                            "value": ":twisted_rightwards_arrows: merge",
+                            "name": "merge: Branch merge, In the subject it must say:   branch 'A into 'B'"
+                        }
+                    ]
+                },
+                {
+                    "name": "subtype",
+                    "message": "(Optional) Select the subtype of change you are committing",
+                    "type": "list",
+                    "choices": [
+                        {
+                            "value": "",
+                            "name": "no subtype: ---"
+                        },
+                        {
+                            "value": ":rotating_light:",
+                            "name": "BREAKING CHANGE: introduces a breaking API change"
+                        },
+                        {
+                            "value": ":construction:",
+                            "name": "PARTIAL COMMIT: introduces a non-functional commit"
+                        }   
+                    ]
+                },
+                {
+                    "name": "scope",
+                    "message": "(Optional) Select the scope of change you are committing",
+                    "type": "list",
+                    "choices": [
+                        {
+                            "value": "",
+                            "name": "no scope: ---"
+                        },
+                        {
+                            "value": "commands",
+                            "name": "commands: twitch commands"
+                        },
+                        {
+                            "value": "roleman",
+                            "name": "roleman: Role Manager twitch extension"
+                        }   
+                    ]
+                },
+                {
+                    "name": "message",
+                    "message": "message of the commit",
+                    "type": "input"
+                },
+                {
+                    "name": "body",
+                    "message": "(Optional) Add body",
+                    "type": "input"
+                },
+                {
+                    "name": "footer",
+                    "message": "Select the footer of change you are committing",
+                    "type": "list",
+                    "choices": [
+                        {
+                            "value": "",
+                            "name": "no footer: ---"
+                        },
+                        {
+                            "value": "doc: ",
+                            "name": "doc: Reference to a documentation"
+                        },
+                        {
+                            "value": "BREAKING CHANGE: ",
+                            "name": "BREAKING CHANGE: Detail a breaking API change"
+                        }   
+                    ]
+                },
+                {
+                    "name": "confirm",
+                    "message": "Are you sure you want to proceed with the commit above?",
+                    "type": "confirm"
+                }
+            ]
+        }
+    }
+}
