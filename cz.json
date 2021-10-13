@@ -3,7 +3,7 @@
 	"name": "cz_customize",
     "version": "0.1.0",
         "customize": {
-            "message_template": "{{subtype}}{{type}}{{scope}}: {{message}}\n\n{{body}}\n\n{{footer}}",
+            "message_template": "{{subtype}}{{type}}{{scope}}: {{message}}{% if body %}\n\n{{body}}{% endif %}{% if doc %}\n\ndoc: {{doc}}{% if BreakingChange %}\nBREAKING CHANGE: {{BreakingChange}}{% endif %}{% else %}{% if BreakingChange %}\n\nBREAKING CHANGE: {{BreakingChange}}{% endif %}{% endif %}",
             "example": "feature: this feature enable customize through config file",
             "schema": ["{subtype}{type}{scope}: {message}",
                 "",
@@ -11,7 +11,7 @@
                 "",
                 "{footer}"
               ],
-            "schema_pattern": "(:rotating_light:|:construction:)?(:tada: initial|:hammer: build|:watch: chore|:robot: ci|:books: docs|:sparkles: feat|:bug: fix|:rocket: perf|:paperclip: refactor|:wastebasket: revert|:gem: style|:test_tube: test|:broom: clean|:ambulance: hotfix|:twisted_rightwards_arrows: merge)(\\(.+\\)):(\\s.+)(\\n(\\n.+)+)?(\\n(\\n.+)+)?",
+            "schema_pattern": "(:rotating_light:|:construction:)?(:tada: initial|:hammer: build|:watch: chore|:robot: ci|:books: docs|:sparkles: feat|:bug: fix|:rocket: perf|:paperclip: refactor|:wastebasket: revert|:gem: style|:test_tube: test|:broom: clean|:ambulance: hotfix|:twisted_rightwards_arrows: merge)(\\(.+\\))?:(\\s.+)(\\n(\\n.+)+)?(\\n(\\n.+)+)?",
             "bump_pattern": "^(break|new|fix|hotfix)",
             "bump_map": {
                 "break": "MAJOR",
@@ -139,23 +139,14 @@
                     "type": "input"
                 },
                 {
-                    "name": "footer",
-                    "message": "Select the footer of change you are committing",
-                    "type": "list",
-                    "choices": [
-                        {
-                            "value": "",
-                            "name": "no footer: ---"
-                        },
-                        {
-                            "value": "doc: ",
-                            "name": "doc: Reference to a documentation"
-                        },
-                        {
-                            "value": "BREAKING CHANGE: ",
-                            "name": "BREAKING CHANGE: Detail a breaking API change"
-                        }   
-                    ]
+                    "name": "doc",
+                    "message": "(Optional) Add reference to a documentation",
+                    "type": "input"
+                },
+                {
+                    "name": "BreakingChange",
+                    "message": "(Optional) Detail a breaking API change",
+                    "type": "input"
                 },
                 {
                     "name": "confirm",
