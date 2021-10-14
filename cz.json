@@ -11,7 +11,7 @@
                 "",
                 "{footer}"
               ],
-            "schema_pattern": "(:rotating_light:|:construction:)?(:tada: initial|:hammer: build|:watch: chore|:robot: ci|:books: docs|:sparkles: feat|:bug: fix|:rocket: perf|:paperclip: refactor|:wastebasket: revert|:gem: style|:test_tube: test|:broom: clean|:ambulance: hotfix|:twisted_rightwards_arrows: merge)(\\(.+\\))?:(\\s.+)(\\n(\\n.+)+)?(\\n(\\n.+)+)?",
+            "schema_pattern": "(:rotating_light:|:construction:)?(:tada: initial|:hammer: build|:watch: chore|:robot: ci|:books: docs|:sparkles: feat|:bug: fix|:rocket: perf|:paperclip: refactor|:wastebasket: revert|:gem: style|:test_tube: test|:broom: clean|:ambulance: hotfix|:twisted_rightwards_arrows: merge)(\\(.+\\))?:(\\s([^A-Z\\n].*[^.\\n]|[^A-Z.\\n]))(\\n(\\n([^A-Z\\n].*[^.\\n]|[^A-Z.\\n]))+)?(\\n(?=\\n.)((\\ndoc: ([^A-Z\\n].*[^.\\n]|[^A-Z.\\n]))?(\\nBREAKING CHANGE: ([^A-Z\\n].*[^.\\n]|[^A-Z.\\n]))?))?",
             "bump_pattern": "^(break|new|fix|hotfix)",
             "bump_map": {
                 "break": "MAJOR",
@@ -66,7 +66,7 @@
                         },
                         {
                             "value": ":wastebasket: revert",
-                            "name": "revert: reverts a previous commit. Commit subject must be the subject of the reverted commit. In the body it should say: \"this reverts commit <hash>\", where the hash is the SHA of the commit being reverted"
+                            "name": "revert: reverts a previous commit.\nCommit subject must be the subject of the reverted commit. In the body it should say: \"this reverts commit <hash>\", where the hash is the SHA of the commit being reverted"
                         },
                         {
                             "value": ":gem: style",
