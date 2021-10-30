@@ -1,3 +1,5 @@
+asdad
+
 ## ROBI CHISTE
 
 COMMAND_NAME: RobiChiste
@@ -182,11 +184,11 @@ PRIVATE_KEY: c4bc5cddc4dd210c
 !Addshutup Procura que tus palabras sean tan bellas como tus silencios
 !Addshutup Es mejor guardar silencio y ser tomado por tonto que abrir la boca y despejar las dudas
 !Addshutup Cerrá el ort* lrpmqtrmp
-## ROBI CHISTE
 
 
 
 
+## SLAP
 
 COMMAND_NAME: Slap
 PUBLIC_KEY: 449cc489
@@ -207,6 +209,43 @@ PRIVATE_KEY: fb3b717ac08cd35d
 !slap @StreamElements occi
 
 !rmSlap 1
+
+
+
+
+
+## SHINKEI FRASES
+
+COMMAND_NAME: !ShinkeFrase
+PUBLIC_KEY: f520abab
+PRIVATE_KEY: 40ceaba7f6449561
+
+!commands remove !AllShinkeFrase
+!commands remove !rmShinkeFrase
+!commands remove !ShinkeFrases
+!commands remove !ShinkeFrase
+!commands remove _!ShinkeFrase
+!commands remove !AddShinkeFrase
+!commands remove !AddShinkeFraseNote
+
+!commands add !AllShinkeFrase $(urlfetch https://twitch.center/customapi/quote/list?token=f520abab)
+!commands add !rmShinkeFrase -ul=moderator $(urlfetch https://twitch.center/customapi/delquote?token=40ceaba7f6449561&data=$(querystring))
+!commands add !ShinkeFrase -a=_!ShinkeFrase $(urlfetch https://twitch.center/customapi/quote?token=f520abab&data=$(querystring))
+!commands add _!ShinkeFrase Frase N°$(eval b='$(query)';c=b.split('|')[1];const firm=['Shink', 'Capitana'];b.split('.')[0]+`: `+c+` ~ La `+firm[Math.floor(Math.random() * firm.length)]+` `+b.split('|')[2])
+!commands add !AddShinkeFrase $(urlfetch https://twitch.center/customapi/addquote?token=40ceaba7f6449561&data=|"$(querystring) "|$(time America/Mexico_City "YYYY"))
+
+!AddShinkeFrase Cuidado con el... ñaca ñaca
+!AddShinkeFrase La cosa se mueve sola
+!AddShinkeFrase Aquí nadie vio nada...fueron los alienígenas!
+!AddShinkeFrase Ay atascado! >: (
+!AddShinkeFrase Ya me hizo pipí!
+!AddShinkeFrase Que?, destruí el huevo?
+!AddShinkeFrase Jajaja, creo que tiré a la señora
+!AddShinkeFrase Wow que huevón!
+!AddShinkeFrase Ahhhhhh!!!!! me chupó el viejito!
+!AddShinkeFrase Ah que la changada!
+!AddShinkeFrase Todo es culpa de Messi
+!AddShinkeFrase ya me chupó bien chupado
 
 
 
