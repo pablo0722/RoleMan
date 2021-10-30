@@ -3,6 +3,7 @@
 	"name": "cz_customize",
     "version": "0.1.0",
         "customize": {
+            "retry": true,
             "message_template": "{{subtype}}{{type}}{{scope}}: {{message}}{% if body %}\n\n{{body}}{% endif %}{% if doc %}\n\ndoc: {{doc}}{% if BreakingChange %}\nBREAKING CHANGE: {{BreakingChange}}{% endif %}{% else %}{% if BreakingChange %}\n\nBREAKING CHANGE: {{BreakingChange}}{% endif %}{% endif %}",
             "example": "feature: this feature enable customize through config file",
             "schema": ["{subtype}{type}{scope}: {message}",
@@ -11,7 +12,15 @@
                 "",
                 "{footer}"
               ],
-            "schema_pattern": "(:rotating_light:|:construction:)?(:tada: initial|:hammer: build|:watch: chore|:robot: ci|:books: docs|:sparkles: feat|:bug: fix|:rocket: perf|:paperclip: refactor|:wastebasket: revert|:gem: style|:test_tube: test|:broom: clean|:ambulance: hotfix|:twisted_rightwards_arrows: merge)(\\(.+\\))?:(\\s([^A-Z\\n].*[^.\\n]|[^A-Z.\\n]))(\\n(\\n([^A-Z\\n].*[^.\\n]|[^A-Z.\\n]))+)?(\\n(?=\\n.)((\\ndoc: ([^A-Z\\n].*[^.\\n]|[^A-Z.\\n]))?(\\nBREAKING CHANGE: ([^A-Z\\n].*[^.\\n]|[^A-Z.\\n]))?))?",
+            "max_len": 100,
+            "schema_pattern": {
+                "subtype": "(:rotating_light:|:construction:)?",
+                "type": "(:tada: initial|:hammer: build|:watch: chore|:robot: ci|:books: docs|:sparkles: feat|:bug: fix|:rocket: perf|:paperclip: refactor|:wastebasket: revert|:gem: style|:test_tube: test|:broom: clean|:ambulance: hotfix|:twisted_rightwards_arrows: merge)",
+                "scope": "(\\(.+\\))?:",
+                "message": "(\\s[^a-z\\n].*[.])",
+                "body": "(\\n(\\n[^a-z\\n].*[.])+)?",
+                "footer": "(\\n(?=\\n.)((\\ndoc: [^a-z\\n].*[.])?(\\nBREAKING CHANGE: [^a-z\\n].*[.])?))?"
+              },
             "bump_pattern": "^(break|new|fix|hotfix)",
             "bump_map": {
                 "break": "MAJOR",
@@ -147,11 +156,6 @@
                     "name": "BreakingChange",
                     "message": "(Optional) Detail a breaking API change",
                     "type": "input"
-                },
-                {
-                    "name": "confirm",
-                    "message": "Are you sure you want to proceed with the commit above?",
-                    "type": "confirm"
                 }
             ]
         }
