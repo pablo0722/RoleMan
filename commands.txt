@@ -16,9 +16,32 @@ PRIVATE_KEY: 5c9dc0dd203d9786
 !commands add !rmRobiChiste -ul=moderator $(urlfetch https://twitch.center/customapi/delquote?token=5c9dc0dd203d9786&data=$(querystring))
 !commands add !RobiChiste -a=_!RobiChiste $(urlfetch https://twitch.center/customapi/quote?token=71222e25&data=$(querystring))
 !commands add _!RobiChiste Cita N°$(eval b='$(query)';c=b.split('|')[1];b.split('.')[0]+`: `+c+` ~El Robi `+b.split('|')[2])
-!commands add !AddRobiChiste $(urlfetch https://twitch.center/customapi/addquote?token=5c9dc0dd203d9786&data=|"$(querystring) "|$(time America/Mexico_City "YYYY"))
+!commands add !AddRobiChiste -ul=moderator $(urlfetch https://twitch.center/customapi/addquote?token=5c9dc0dd203d9786&data=|"$(querystring) "|$(time America/Mexico_City "YYYY"))
 
 !rmRobiChiste 1
+
+
+
+
+## Meli OOC
+
+COMMAND_NAME: MeliOoc
+PUBLIC_KEY: 5ad96265
+PRIVATE_KEY: faa5ba73355c813e
+
+!commands remove !AllMeliOoc
+!commands remove !rmMeliOoc
+!commands remove !MeliOoc
+!commands remove _!MeliOoc
+!commands remove !AddMeliOoc
+
+!commands add !AllMeliOoc $(urlfetch https://twitch.center/customapi/quote/list?token=5ad96265)
+!commands add !rmMeliOoc -ul=moderator $(urlfetch https://twitch.center/customapi/delquote?token=faa5ba73355c813e&data=$(querystring))
+!commands add !MeliOoc -a=_!MeliOoc $(urlfetch https://twitch.center/customapi/quote?token=5ad96265&data=$(querystring))
+!commands add _!MeliOoc Cita N°$(eval b='$(query)';c=b.split('|')[1];b.split('.')[0]+`: `+c+` ~La Meli `+b.split('|')[2])
+!commands add !AddMeliOoc -ul=moderator $(urlfetch https://twitch.center/customapi/addquote?token=faa5ba73355c813e&data=|"$(querystring) "|$(time America/Mexico_City "YYYY"))
+
+!rmMeliOoc 1
 
 
 
@@ -39,7 +62,7 @@ PRIVATE_KEY: 8202d96093bedc36
 !commands add !rmFrutsiDato -ul=moderator $(urlfetch https://twitch.center/customapi/delquote?token=8202d96093bedc36&data=$(querystring))
 !commands add !FrutsiDato -a=_!FrutsiDato $(urlfetch https://twitch.center/customapi/quote?token=a78f0f19&data=$(querystring))
 !commands add _!FrutsiDato Cita N°$(eval b='$(query)';c=b.split('|')[1];b.split('.')[0]+`: `+c+` ~La Frutsi `+b.split('|')[2])
-!commands add !AddFrutsiDato $(urlfetch https://twitch.center/customapi/addquote?token=8202d96093bedc36&data=|"$(querystring) "|$(time America/Mexico_City "YYYY"))
+!commands add !AddFrutsiDato -ul=moderator $(urlfetch https://twitch.center/customapi/addquote?token=8202d96093bedc36&data=|"$(querystring) "|$(time America/Mexico_City "YYYY"))
 
 !AddFrutsiDato ¿Sabían que si meten una pasita en jugo 🧃 de uva 🍇 con agua mineral se vuelve a hidratar? 🧠
 !AddFrutsiDato Dormí como un brontosaurio 💤🦕 (no sé como dormían los pero me imagino que mucho)
@@ -72,8 +95,8 @@ PRIVATE_KEY: bfb26e8d611130ff
 !commands add !Yojajas -a=_!Yojaja $(urlfetch https://twitch.center/customapi/quote?token=5f8c69d1&data=$(querystring))
 !commands add !Yojaja -a=_!Yojaja $(urlfetch https://twitch.center/customapi/quote?token=5f8c69d1&data=$(querystring))
 !commands add _!Yojaja Cita N°$(eval b='$(query)';c=b.split('|')[1];b.split('.')[0]+`: `+c+` ~ El Yojai `+b.split('|')[2])
-!commands add !AddYojaja $(urlfetch https://twitch.center/customapi/addquote?token=bfb26e8d611130ff&data=|"$(querystring) "|$(time America/Mexico_City "YYYY"))
-!commands add !AddYojajas $(urlfetch https://twitch.center/customapi/addquote?token=bfb26e8d611130ff&data=|"$(querystring) "|$(time America/Mexico_City "YYYY"))
+!commands add !AddYojaja -ul=moderator $(urlfetch https://twitch.center/customapi/addquote?token=bfb26e8d611130ff&data=|"$(querystring) "|$(time America/Mexico_City "YYYY"))
+!commands add !AddYojajas -ul=moderator $(urlfetch https://twitch.center/customapi/addquote?token=bfb26e8d611130ff&data=|"$(querystring) "|$(time America/Mexico_City "YYYY"))
 
 !AddYojaja Me gusta meter la mano por detrás y hablarle por la nuca
 
@@ -102,8 +125,8 @@ PRIVATE_KEY: 54ce96afe1d2bf12
 !commands add !YoFakes -a=_!YoFake $(urlfetch https://twitch.center/customapi/quote?token=aa67e752&data=$(querystring))
 !commands add !YoFake -a=_!YoFake $(urlfetch https://twitch.center/customapi/quote?token=aa67e752&data=$(querystring))
 !commands add _!YoFake Mentira N°$(eval b='$(query)';c=b.split('|')[1];b.split('.')[0]+`: `+c+` ~ El Yojai `+b.split('|')[2])
-!commands add !AddYoFake $(urlfetch https://twitch.center/customapi/addquote?token=54ce96afe1d2bf12&data=|"$(querystring) "|$(time America/Mexico_City "YYYY"))
-!commands add !AddYoFakeNote $(urlfetch https://twitch.center/customapi/addquote?token=54ce96afe1d2bf12&data=|$(querystring)|$(time America/Mexico_City "YYYY"))
+!commands add !AddYoFake -ul=moderator $(urlfetch https://twitch.center/customapi/addquote?token=54ce96afe1d2bf12&data=|"$(querystring) "|$(time America/Mexico_City "YYYY"))
+!commands add !AddYoFakeNote -ul=moderator $(urlfetch https://twitch.center/customapi/addquote?token=54ce96afe1d2bf12&data=|$(querystring)|$(time America/Mexico_City "YYYY"))
 
 !AddYoFake No dejé en visto a Frutsi y Brenda
 !AddYoFake No le debo una canción a Kimu
