@@ -23,6 +23,39 @@ PRIVATE_KEY: 5c9dc0dd203d9786
 
 
 
+
+## ROBI GUITARRA Y VOZ
+
+COMMAND_NAME: Voz
+PUBLIC_KEY: 74aaf0d1
+PRIVATE_KEY: ee1940283f9e955a
+
+!commands remove !AllVoz
+!commands remove !rmVoz
+!commands remove !Voz
+!commands remove _!Voz
+!commands remove !AddVoz
+
+!commands add !AllVoz $(urlfetch https://twitch.center/customapi/quote/list?token=74aaf0d1)
+!commands add !rmVoz -ul=moderator $(urlfetch https://twitch.center/customapi/delquote?token=ee1940283f9e955a&data=$(querystring))
+!commands add !Voz -a=_!Voz $(urlfetch https://twitch.center/customapi/quote?token=74aaf0d1&data=$(querystring))
+!commands add _!Voz Rolón Nº$(eval b='$(query)';c=b.split('|')[1];b.split('.')[0]+`: `+c)
+!commands add !AddVoz -ul=moderator $(urlfetch https://twitch.center/customapi/addquote?token=ee1940283f9e955a&data=|$(querystring))
+
+!rmVoz 1
+
+!AddVoz radiohead - there there
+!AddVoz MISSIO - Bottom of the Deep Blue Sea
+!AddVoz new order - ceremony
+!AddVoz David Bowie - Space Oddity
+!AddVoz Radiohead - Optimistic
+!AddVoz Interpol - PDA
+!AddVoz Cecilia Krull - My Life is Going on
+!AddVoz Echo & The Bunnymen - The Killing Moon
+
+
+
+
 ## Meli OOC
 
 COMMAND_NAME: MeliOoc
