@@ -1,4 +1,34 @@
-asdad
+## PAPITA NAVAJAZO
+
+COMMAND_NAME: Navajazo
+PUBLIC_KEY: 6e70d1cf
+PRIVATE_KEY: 06871ee3ac27f654
+
+!commands remove !AllNavajazo
+!commands remove !rmNavajazo
+!commands remove !Navajazo
+!commands remove _!Navajazo
+!commands remove !AddNavajazo
+
+!commands add !AllNavajazo $(urlfetch https://twitch.center/customapi/quote/list?token=6e70d1cf)
+!commands add !rmNavajazo -ul=moderator $(urlfetch https://twitch.center/customapi/delquote?token=06871ee3ac27f654&data=$(querystring))
+!commands add !Navajazo -a=_!Navajazo $(urlfetch https://twitch.center/customapi/quote?token=6e70d1cf&data=$(eval a='$(query)';b=a.split(' ');c=' ';for(i=1;i<b.length;i++){c=c+b[i]+' '};c))|$(touser)
+!commands add _!Navajazo $(eval b='$(query)';c=b.split('|')[1];d=b.split('|')[2];`$(user) navajeo a `+d+` `+c)
+!commands add !AddNavajazo $(urlfetch https://twitch.center/customapi/addquote?token=06871ee3ac27f654&data=|$(querystring))
+
+
+!rmNavajazo 1
+
+!AddNavajazo con un calcetín
+!AddNavajazo con una navaja
+!AddNavajazo con un cepillo de dientes
+!AddNavajazo con una galleta
+!AddNavajazo con una pierna de pollo
+!AddNavajazo con una cuchara
+
+
+
+
 
 ## ROBI CHISTE
 
