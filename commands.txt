@@ -1,3 +1,33 @@
+## BRENDA CARACOLA
+
+COMMAND_NAME: CaracolaMagica
+PUBLIC_KEY: bcb482f7
+PRIVATE_KEY: 486b6f17a982f08e
+
+!commands remove !AllCaracolaMagica
+!commands remove !rmCaracolaMagica
+!commands remove !CaracolaMagica
+!commands remove _!CaracolaMagica
+!commands remove !AddCaracolaMagica
+
+!commands add !AllCaracolaMagica $(urlfetch https://twitch.center/customapi/quote/list?token=bcb482f7)
+!commands add !rmCaracolaMagica -ul=moderator $(urlfetch https://twitch.center/customapi/delquote?token=486b6f17a982f08e&data=$(querystring))
+!commands add !CaracolaMagica -a=_!CaracolaMagica $(urlfetch https://twitch.center/customapi/quote?token=bcb482f7&data=$(querystring))
+!commands add _!CaracolaMagica $(eval b='$(query)';c=b.split('|')[1];b.split('.')[0]+`: `+c+` ~La Caracola ha hablado`)
+!commands add !AddCaracolaMagica -ul=moderator $(urlfetch https://twitch.center/customapi/addquote?token=486b6f17a982f08e&data=|"$(querystring) "|)
+
+
+!rmCaracolaMagica 1
+
+!AddCaracolaMagica Si
+!AddCaracolaMagica No
+!AddCaracolaMagica Nada
+!AddCaracolaMagica Vuelve a preguntar
+
+
+
+
+
 ## BRENDA PREMIO
 
 COMMAND_NAME: Premio
