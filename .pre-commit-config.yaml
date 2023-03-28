@@ -9,3 +9,4 @@ repos:
         language_version: python3
         require_serial: true
         minimum_pre_commit_version: "0.15.4"
+        stages: [commit-msg]
