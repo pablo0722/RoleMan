@@ -1,3 +1,6 @@
+To generate key https://twitch.center/customapi/quote/generate
+
+
 ## BRENDA CARACOLA
 
 COMMAND_NAME: CaracolaMagica
@@ -302,6 +305,36 @@ PRIVATE_KEY: 54ce96afe1d2bf12
 !AddYoFake No le debo taquitos a nadie
 
 !rmYoFake 1
+
+
+
+
+
+## YOJAI FUNA
+
+COMMAND_NAME: !Funajai
+PUBLIC_KEY: 9e51f44f
+PRIVATE_KEY: 026cb06b439a46ec
+
+!commands remove !AllFunajai
+!commands remove !rmFunajai
+!commands remove !Funajais
+!commands remove !Funajai
+!commands remove _!Funajai
+!commands remove !AddFunajai
+!commands remove !AddFunajais
+
+!commands add !AllFunajai $(urlfetch https://twitch.center/customapi/quote/list?token=9e51f44f)
+!commands add !rmFunajai -ul=moderator $(urlfetch https://twitch.center/customapi/delquote?token=026cb06b439a46ec&data=$(querystring))
+!commands add !Funajais -a=_!Funajai $(urlfetch https://twitch.center/customapi/quote?token=9e51f44f&data=$(querystring))
+!commands add !Funajai -a=_!Funajai $(urlfetch https://twitch.center/customapi/quote?token=9e51f44f&data=$(querystring))
+!commands add _!Funajai Funa N°$(eval b='$(query)';c=b.split('|')[1];b.split('.')[0]+`: `+c+` ~ El Yojai `+b.split('|')[2])
+!commands add !AddFunajai -ul=moderator $(urlfetch https://twitch.center/customapi/addquote?token=026cb06b439a46ec&data=|"$(querystring) "|$(time America/Mexico_City "YYYY"))
+!commands add !AddFunajais -ul=moderator $(urlfetch https://twitch.center/customapi/addquote?token=026cb06b439a46ec&data=|"$(querystring) "|$(time America/Mexico_City "YYYY"))
+
+!AddFunajai Me gusta meter la mano por detrás y hablarle por la nuca
+
+!rmFunajai 1 
 
 
 
