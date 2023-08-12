@@ -383,8 +383,8 @@ PRIVATE_KEY: c4bc5cddc4dd210c
 
 !commands add !Allshutup $(urlfetch https://twitch.center/customapi/quote/list?token=6e6f56db)
 !commands add !rmshutup -ul=moderator $(urlfetch https://twitch.center/customapi/delquote?token=c4bc5cddc4dd210c&data=$(querystring))
-!commands add !shutup -a=_!shutup $(urlfetch https://twitch.center/customapi/quote?token=6e6f56db&data=$(querystring))
-!commands add _!shutup $(touser), $(eval b='$(query)';c=b.split('|')[1];c)
+!commands add !shutup -a=_!shutup $(urlfetch https://twitch.center/customapi/quote?token=6e6f56db)$(touser)
+!commands add _!shutup $(eval b='$(query)';c=b.split('|')[1].split('"')[1];d=b.split('|')[2];d+`, `+c)
 !commands add !Addshutup $(urlfetch https://twitch.center/customapi/addquote?token=c4bc5cddc4dd210c&data=|"$(querystring) "|)
 
 !Addshutup ya callate alv
