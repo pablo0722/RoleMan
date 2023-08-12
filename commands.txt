@@ -13,7 +13,7 @@ PRIVATE_KEY: 486b6f17a982f08e
 !commands remove _!CaracolaMagica
 !commands remove !AddCaracolaMagica
 
-!commands add !AllCaracolaMagica $(urlfetch https://twitch.center/customapi/quote/list?token=bcb482f7)
+!commands add !AllCaracolaMagica https://twitch.center/customapi/quote/list?token=bcb482f7
 !commands add !rmCaracolaMagica -ul=moderator $(urlfetch https://twitch.center/customapi/delquote?token=486b6f17a982f08e&data=$(querystring))
 !commands add !CaracolaMagica -a=_!CaracolaMagica $(urlfetch https://twitch.center/customapi/quote?token=bcb482f7)
 !commands add _!CaracolaMagica $(eval b='$(query)';c=b.split('|')[1];c+` ~La Caracola ha hablado`)
@@ -43,7 +43,7 @@ PRIVATE_KEY: 642538b235bed07c
 !commands remove _!Premio
 !commands remove !AddPremio
 
-!commands add !AllPremio -ul=moderator $(urlfetch https://twitch.center/customapi/quote/list?token=68118cfc)
+!commands add !AllPremio https://twitch.center/customapi/quote/list?token=68118cfc
 !commands add !rmPremio -ul=moderator $(urlfetch https://twitch.center/customapi/delquote?token=642538b235bed07c&data=$(querystring))
 !commands add !Premio -ul=moderator -a=_!Premio $(urlfetch https://twitch.center/customapi/quote?token=68118cfc&data=$(eval a='$(query)';b=a.split(' ');c=' ';for(i=1;i<b.length;i++){c=c+b[i]+' '};c))|$(touser)
 !commands add _!Premio -ul=moderator $(eval b='$(query)';c=b.split('|')[1];d=b.split('|')[2];d+` ganó `+c)
@@ -74,7 +74,7 @@ PRIVATE_KEY: e715ceffe158bf68
 !commands remove _!Consejo
 !commands remove !AddConsejo
 
-!commands add !AllConsejo $(urlfetch https://twitch.center/customapi/quote/list?token=7b933efc)
+!commands add !AllConsejo https://twitch.center/customapi/quote/list?token=7b933efc
 !commands add !rmConsejo -ul=moderator $(urlfetch https://twitch.center/customapi/delquote?token=e715ceffe158bf68&data=$(querystring))
 !commands add !Consejo -a=_!Consejo $(urlfetch https://twitch.center/customapi/quote?token=7b933efc&data=$(querystring))
 !commands add _!Consejo Consejo N°$(eval b='$(query)';c=b.split('|')[1];b.split('.')[0]+`: `+c+` ~La Bren `+b.split('|')[2])
@@ -102,7 +102,7 @@ PRIVATE_KEY: 06871ee3ac27f654
 !commands remove _!Navajazo
 !commands remove !AddNavajazo
 
-!commands add !AllNavajazo $(urlfetch https://twitch.center/customapi/quote/list?token=6e70d1cf)
+!commands add !AllNavajazo https://twitch.center/customapi/quote/list?token=6e70d1cf
 !commands add !rmNavajazo -ul=moderator $(urlfetch https://twitch.center/customapi/delquote?token=06871ee3ac27f654&data=$(querystring))
 !commands add !Navajazo -a=_!Navajazo $(urlfetch https://twitch.center/customapi/quote?token=6e70d1cf&data=$(eval a='$(query)';b=a.split(' ');c=' ';for(i=1;i<b.length;i++){c=c+b[i]+' '};c))|$(touser)
 !commands add _!Navajazo $(eval b='$(query)';c=b.split('|')[1];d=b.split('|')[2];`$(user) navajeo a `+d+` `+c)
@@ -134,7 +134,7 @@ PRIVATE_KEY: 5c9dc0dd203d9786
 !commands remove _!RobiChiste
 !commands remove !AddRobiChiste
 
-!commands add !AllRobiChiste $(urlfetch https://twitch.center/customapi/quote/list?token=71222e25)
+!commands add !AllRobiChiste https://twitch.center/customapi/quote/list?token=71222e25
 !commands add !rmRobiChiste -ul=moderator $(urlfetch https://twitch.center/customapi/delquote?token=5c9dc0dd203d9786&data=$(querystring))
 !commands add !RobiChiste -a=_!RobiChiste $(urlfetch https://twitch.center/customapi/quote?token=71222e25&data=$(querystring))
 !commands add _!RobiChiste Cita N°$(eval b='$(query)';c=b.split('|')[1];b.split('.')[0]+`: `+c+` ~El Robi `+b.split('|')[2])
@@ -158,7 +158,7 @@ PRIVATE_KEY: ee1940283f9e955a
 !commands remove _!Voz
 !commands remove !AddVoz
 
-!commands add !AllVoz $(urlfetch https://twitch.center/customapi/quote/list?token=74aaf0d1)
+!commands add !AllVoz https://twitch.center/customapi/quote/list?token=74aaf0d1
 !commands add !rmVoz -ul=moderator $(urlfetch https://twitch.center/customapi/delquote?token=ee1940283f9e955a&data=$(querystring))
 !commands add !Voz -a=_!Voz $(urlfetch https://twitch.center/customapi/quote?token=74aaf0d1&data=$(querystring))
 !commands add _!Voz Rolón Nº$(eval b='$(query)';c=b.split('|')[1];b.split('.')[0]+`: `+c)
@@ -190,7 +190,7 @@ PRIVATE_KEY: faa5ba73355c813e
 !commands remove _!MeliOoc
 !commands remove !AddMeliOoc
 
-!commands add !AllMeliOoc $(urlfetch https://twitch.center/customapi/quote/list?token=5ad96265)
+!commands add !AllMeliOoc https://twitch.center/customapi/quote/list?token=5ad96265
 !commands add !rmMeliOoc -ul=moderator $(urlfetch https://twitch.center/customapi/delquote?token=faa5ba73355c813e&data=$(querystring))
 !commands add !MeliOoc -a=_!MeliOoc $(urlfetch https://twitch.center/customapi/quote?token=5ad96265&data=$(querystring))
 !commands add _!MeliOoc Cita N°$(eval b='$(query)';c=b.split('|')[1];b.split('.')[0]+`: `+c+` ~La Meli `+b.split('|')[2])
@@ -213,7 +213,7 @@ PRIVATE_KEY: 8202d96093bedc36
 !commands remove _!FrutsiDato
 !commands remove !AddFrutsiDato
 
-!commands add !AllFrutsiDato $(urlfetch https://twitch.center/customapi/quote/list?token=a78f0f19)
+!commands add !AllFrutsiDato https://twitch.center/customapi/quote/list?token=a78f0f19
 !commands add !rmFrutsiDato -ul=moderator $(urlfetch https://twitch.center/customapi/delquote?token=8202d96093bedc36&data=$(querystring))
 !commands add !FrutsiDato -a=_!FrutsiDato $(urlfetch https://twitch.center/customapi/quote?token=a78f0f19&data=$(querystring))
 !commands add _!FrutsiDato Cita N°$(eval b='$(query)';c=b.split('|')[1];b.split('.')[0]+`: `+c+` ~La Frutsi `+b.split('|')[2])
@@ -245,7 +245,7 @@ PRIVATE_KEY: bfb26e8d611130ff
 !commands remove !AddYojaja
 !commands remove !AddYojajas
 
-!commands add !AllYojaja $(urlfetch https://twitch.center/customapi/quote/list?token=5f8c69d1)
+!commands add !AllYojaja https://twitch.center/customapi/quote/list?token=5f8c69d1
 !commands add !rmYojaja -ul=moderator $(urlfetch https://twitch.center/customapi/delquote?token=bfb26e8d611130ff&data=$(querystring))
 !commands add !Yojajas -a=_!Yojaja $(urlfetch https://twitch.center/customapi/quote?token=5f8c69d1&data=$(querystring))
 !commands add !Yojaja -a=_!Yojaja $(urlfetch https://twitch.center/customapi/quote?token=5f8c69d1&data=$(querystring))
@@ -275,7 +275,7 @@ PRIVATE_KEY: 54ce96afe1d2bf12
 !commands remove !AddYoFake
 !commands remove !AddYoFakeNote
 
-!commands add !AllYoFake $(urlfetch https://twitch.center/customapi/quote/list?token=aa67e752)
+!commands add !AllYoFake https://twitch.center/customapi/quote/list?token=aa67e752
 !commands add !rmYoFake -ul=moderator $(urlfetch https://twitch.center/customapi/delquote?token=54ce96afe1d2bf12&data=$(querystring))
 !commands add !YoFakes -a=_!YoFake $(urlfetch https://twitch.center/customapi/quote?token=aa67e752&data=$(querystring))
 !commands add !YoFake -a=_!YoFake $(urlfetch https://twitch.center/customapi/quote?token=aa67e752&data=$(querystring))
@@ -324,7 +324,7 @@ PRIVATE_KEY: 026cb06b439a46ec
 !commands remove !AddFunajai
 !commands remove !AddFunajais
 
-!commands add !AllFunajai $(urlfetch https://twitch.center/customapi/quote/list?token=9e51f44f)
+!commands add !AllFunajai https://twitch.center/customapi/quote/list?token=9e51f44f
 !commands add !rmFunajai -ul=moderator $(urlfetch https://twitch.center/customapi/delquote?token=026cb06b439a46ec&data=$(querystring))
 !commands add !Funajais -a=_!Funajai $(urlfetch https://twitch.center/customapi/quote?token=9e51f44f&data=$(querystring))
 !commands add !Funajai -a=_!Funajai $(urlfetch https://twitch.center/customapi/quote?token=9e51f44f&data=$(querystring))
@@ -352,7 +352,7 @@ PRIVATE_KEY: ce70b32d2b44cfc5
 !commands remove _!Comercial
 !commands remove !AddComercial
 
-!commands add !AllComercial $(urlfetch https://twitch.center/customapi/quote/list?token=c997ec07)
+!commands add !AllComercial https://twitch.center/customapi/quote/list?token=c997ec07
 !commands add !rmComercial -ul=moderator $(urlfetch https://twitch.center/customapi/delquote?token=ce70b32d2b44cfc5&data=$(querystring))
 !commands add !Comercial -a=_!Comercial $(urlfetch https://twitch.center/customapi/quote?token=c997ec07&data=$(querystring))
 !commands add _!Comercial Comercial N°$(eval b='$(query)';c=b.split('|')[1];b.split('.')[0]+`: `+c)
@@ -381,7 +381,7 @@ PRIVATE_KEY: c4bc5cddc4dd210c
 !commands remove _!shutup
 !commands remove !Addshutup
 
-!commands add !Allshutup $(urlfetch https://twitch.center/customapi/quote/list?token=6e6f56db)
+!commands add !Allshutup https://twitch.center/customapi/quote/list?token=6e6f56db
 !commands add !rmshutup -ul=moderator $(urlfetch https://twitch.center/customapi/delquote?token=c4bc5cddc4dd210c&data=$(querystring))
 !commands add !shutup -a=_!shutup $(urlfetch https://twitch.center/customapi/quote?token=6e6f56db)$(touser)
 !commands add _!shutup $(eval b='$(query)';c=b.split('|')[1].split('"')[1];d=b.split('|')[2];d+`, `+c)
@@ -408,7 +408,7 @@ PRIVATE_KEY: fb3b717ac08cd35d
 !commands remove _!Slap
 !commands remove !AddSlap
 
-!commands add !AllSlap $(urlfetch https://twitch.center/customapi/quote/list?token=449cc489)
+!commands add !AllSlap https://twitch.center/customapi/quote/list?token=449cc489
 !commands add !rmSlap -ul=moderator $(urlfetch https://twitch.center/customapi/delquote?token=fb3b717ac08cd35d&data=$(querystring))
 !commands add !Slap -a=_!Slap $(urlfetch https://twitch.center/customapi/quote?token=449cc489&data=$(eval a='$(query)';b=a.split(' ');c=' ';for(i=1;i<b.length;i++){c=c+b[i]+' '};c))|$(touser)
 !commands add _!Slap $(eval b='$(query)';c=b.split('|')[1];d=b.split('|')[2];`$(user) le slapea `+c+` a `+d)
@@ -436,7 +436,7 @@ PRIVATE_KEY: 40ceaba7f6449561
 !commands remove !AddShinkeFrase
 !commands remove !AddShinkeFraseNote
 
-!commands add !AllShinkeFrase $(urlfetch https://twitch.center/customapi/quote/list?token=f520abab)
+!commands add !AllShinkeFrase https://twitch.center/customapi/quote/list?token=f520abab
 !commands add !rmShinkeFrase -ul=moderator $(urlfetch https://twitch.center/customapi/delquote?token=40ceaba7f6449561&data=$(querystring))
 !commands add !ShinkeFrase -a=_!ShinkeFrase $(urlfetch https://twitch.center/customapi/quote?token=f520abab&data=$(querystring))
 !commands add _!ShinkeFrase Frase N°$(eval b='$(query)';c=b.split('|')[1];const firm=['Shink', 'Capitana'];b.split('.')[0]+`: `+c+` ~ La `+firm[Math.floor(Math.random() * firm.length)]+` `+b.split('|')[2])
